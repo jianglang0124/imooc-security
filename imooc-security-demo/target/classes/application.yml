@@ -1,0 +1,35 @@
+spring:
+  #数据库配置
+  datasource:
+    url: jdbc:mysql://192.168.1.210:3306/vhr?useUnicode=true&useSSL=false&characterEncoding=utf-8
+    username: root
+    password: root
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+  session:
+        store-type: none
+  #开启驼峰命名
+  configuration:
+    map-underscore-to-camel-case: true
+server:
+  port: 8060
+#security:
+ # basic:
+  #  enabled: false
+## 这边注意是mybatis-plus 的标签 因为整合的是 plus  用mybatis的标签是报错的
+mybatis-plus:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.imooc.*.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+imooc:
+  security:
+    code:
+      image:
+        length: 6
+        width: 100
+        url: /user/*
+    ##browser:
+     ## loginPage: /demo-signIn.html
