@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
  * @since 2020-04-15
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/user1")
 @Api(value= "用户模块")
 public class UserController {
 

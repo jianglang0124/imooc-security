@@ -1,3 +1,4 @@
+/*
 package com.imooc.web.controller;
 
 
@@ -17,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class UserTestController {
+public class UserControllerTest {
 
     @Autowired
     private WebApplicationContext wac;
@@ -30,7 +31,7 @@ public class UserTestController {
     }
     @Test
     public  void  whenQuerySuccess() throws Exception{
-       mockMvc.perform(get("/user")
+       mockMvc.perform(get("/userInfo")
                 .param("username", "jojo")
                .param("age", "18")
                .param("ageTo", "60")
@@ -41,12 +42,10 @@ public class UserTestController {
                 .contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(status().isOk())
                 .andReturn().getResponse().getContentAsString();
-
-
     }
     @Test
     public  void  whenQuerySuccess1() throws Exception {
-        String contentAsString = mockMvc.perform(get("/user/1")
+        String contentAsString = mockMvc.perform(get("/userInfo/1")
                 // .param("username", "jojo")
                 // .param("age", "18").param("ageTo", "60").param("xxx", "yyy")
                 // .param("size", "15")
@@ -60,8 +59,8 @@ public class UserTestController {
 
         @Test
         public  void  whenQuerySuccess2() throws Exception{
-            String content = "{\"username\":\"Tom\",\"password\":null}";
-            String contentAsString1 = mockMvc.perform(post("/user").content(content)
+            String content = "{\"username\":\"Tom\",\"password\":123}";
+            String contentAsString1 = mockMvc.perform(post("/userInfo").content(content)
                     // .param("username", "jojo")
                     // .param("age", "18").param("ageTo", "60").param("xxx", "yyy")
                     // .param("size", "15")
@@ -75,8 +74,8 @@ public class UserTestController {
 
     @Test
     public  void  whenUpdateSuccess() throws Exception {
-        String content = "{\"username\":\"jack\",\"password\":34555}";
-        String contentAsString = mockMvc.perform(put("/user/1").content(content)
+        String content = "{\"username\":\"jack\",\"password\":123}";
+        String contentAsString = mockMvc.perform(put("/userInfo/1").content(content)
                 // .param("username", "jojo")
                 // .param("age", "18").param("ageTo", "60").param("xxx", "yyy")
                 // .param("size", "15")
@@ -90,7 +89,7 @@ public class UserTestController {
 
     @Test
     public  void  whenDeleteSuccess() throws Exception {
-        String contentAsString = mockMvc.perform(delete("/user/1")
+        String contentAsString = mockMvc.perform(delete("/userInfo/1")
                 // .param("username", "jojo")
                 // .param("age", "18").param("ageTo", "60").param("xxx", "yyy")
                 // .param("size", "15")
@@ -103,3 +102,4 @@ public class UserTestController {
     }
 
 }
+*/
